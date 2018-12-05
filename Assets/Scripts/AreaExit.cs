@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 public class AreaExit : MonoBehaviour {
 	public string areaToLoad;
 	public string areaTransitionName;
+	public AreaEntrance theEntrance;
 
 	// Use this for initialization
 	void Start () {
-		
+		theEntrance.transitionName = areaTransitionName;
 	}
 	
 	// Update is called once per frame

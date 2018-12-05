@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   areaToLoad: test
   areaTransitionName: Countryside-1
+  theEntrance: {fileID: 114690244955880858}
 --- !u!114 &114690244955880858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,4 +121,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187ab0599a28f934490d4cfb71b9cad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionName: Countryside-1
+  transitionName: 
