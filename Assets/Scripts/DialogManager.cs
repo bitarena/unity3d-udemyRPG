@@ -28,6 +28,7 @@ public class DialogManager : MonoBehaviour {
 					dialogBox.SetActive(false);
 					PlayerController.instance.canMove = true;
 				} else {
+					CheckIfName();
 					dialogText.text = dialogLines[currentLine];
 				}
 			} else if (Input.GetButtonUp("Fire1")) {
@@ -36,12 +37,22 @@ public class DialogManager : MonoBehaviour {
 		}
 	}
 
-	public void ShowDialog(string[] newLines) {
+	public void ShowDialog(string[] newLines, bool isPerson) {
 		dialogLines = newLines;
 		currentLine = 0;
+		CheckIfName();
 		dialogText.text = dialogLines[currentLine];
 		dialogBox.SetActive(true);
 		justStarted = true;
+
+		nameBox.SetActive(isPerson);
 		PlayerController.instance.canMove = false;
+	}
+
+	public void CheckIfName() {
+		if (dialogLines[currentLine].StartsWith("n-")) {
+			nameText.text = dialogLines[currentLine++]
+				.Replace("n-", string.Empty);
+		}
 	}
 }
