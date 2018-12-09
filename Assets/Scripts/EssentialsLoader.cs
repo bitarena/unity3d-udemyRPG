@@ -5,6 +5,7 @@ using UnityEngine;
 public class EssentialsLoader : MonoBehaviour {
 	public GameObject UIScreen;
 	public GameObject player;
+	public GameObject gameManager;
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +15,10 @@ public class EssentialsLoader : MonoBehaviour {
 		if (PlayerController.instance == null) {
 			var clone = Instantiate(player).GetComponent<PlayerController>();
 			PlayerController.instance = clone;
+		}
+
+		if (GameManager.instance == null) {
+			Instantiate(gameManager);
 		}
 	}
 	
